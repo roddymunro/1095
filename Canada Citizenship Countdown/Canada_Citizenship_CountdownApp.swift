@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct Canada_Citizenship_CountdownApp: App {
+    
+    @StateObject var viewModel = EntriesViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(viewModel: viewModel)
         }
     }
 }
