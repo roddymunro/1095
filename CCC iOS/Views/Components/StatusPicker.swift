@@ -14,7 +14,7 @@ struct StatusPicker: View {
     var body: some View {
         NavigationLink(destination: StatusPickerView(selection: $selection)) {
             HStack {
-                Text("Entry Status").fontWeight(.medium)
+                Text("Entry Status").formLabelStyle()
                 Spacer()
                 Text(selection?.rawValue ?? "")
             }

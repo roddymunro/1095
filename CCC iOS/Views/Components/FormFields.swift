@@ -20,7 +20,7 @@ public struct FormField: View {
     public var body: some View {
         HStack {
             Text(label)
-                .fontWeight(.medium)
+                .formLabelStyle()
             Spacer()
             TextField(label, text: $value)
                 .multilineTextAlignment(.trailing)
@@ -41,7 +41,7 @@ public struct SecureFormField: View {
     public var body: some View {
         HStack {
             Text(label)
-                .fontWeight(.medium)
+                .formLabelStyle()
             Spacer()
             SecureField(label, text: $value)
                 .multilineTextAlignment(.trailing)

@@ -16,7 +16,6 @@
 		790B380F26691F1A0082EF50 /* ImageButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B380E26691F1A0082EF50 /* ImageButtonStyle.swift */; };
 		790B3811266921890082EF50 /* TravelEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B3810266921890082EF50 /* TravelEntry.swift */; };
 		790B3814266922160082EF50 /* EntryStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B3813266922160082EF50 /* EntryStatus.swift */; };
-		790B3816266922BD0082EF50 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B3815266922BD0082EF50 /* Date+Ext.swift */; };
 		790B381A2669251B0082EF50 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B38192669251B0082EF50 /* WelcomeView.swift */; };
 		790B381C266925670082EF50 /* NewFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B381B266925670082EF50 /* NewFeature.swift */; };
 		790B381E2669257D0082EF50 /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B381D2669257D0082EF50 /* PrimaryButtonStyle.swift */; };
@@ -26,7 +25,42 @@
 		790B3829266969F60082EF50 /* EntriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B3828266969F60082EF50 /* EntriesViewModel.swift */; };
 		793981DC267280710061E551 /* EntryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793981DB267280710061E551 /* EntryRow.swift */; };
 		79E080622672963300F8C33B /* StatusPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E080612672963300F8C33B /* StatusPicker.swift */; };
+		79E0806A26729BF300F8C33B /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E0806926729BF300F8C33B /* WidgetKit.framework */; };
+		79E0806C26729BF300F8C33B /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E0806B26729BF300F8C33B /* SwiftUI.framework */; };
+		79E0806F26729BF300F8C33B /* CCCWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0806E26729BF300F8C33B /* CCCWidget.swift */; };
+		79E0807126729BF400F8C33B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79E0807026729BF400F8C33B /* Assets.xcassets */; };
+		79E0807526729BF400F8C33B /* CCCWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 79E0806726729BF300F8C33B /* CCCWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		79E0807B26729DC900F8C33B /* EntryStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B3813266922160082EF50 /* EntryStatus.swift */; };
+		79E0807C26729DCE00F8C33B /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B380626691B190082EF50 /* ErrorModel.swift */; };
+		79E0807D26729DD100F8C33B /* TravelEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B3810266921890082EF50 /* TravelEntry.swift */; };
+		79E0807E26729DD500F8C33B /* NewFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B381B266925670082EF50 /* NewFeature.swift */; };
+		79E0808126729EFE00F8C33B /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0808026729EFE00F8C33B /* Date+Ext.swift */; };
+		79E0808226729F3700F8C33B /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0808026729EFE00F8C33B /* Date+Ext.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		79E0807326729BF400F8C33B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 790B37EB26691A9C0082EF50 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 79E0806626729BF300F8C33B;
+			remoteInfo = CCCWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		79E0807926729BF400F8C33B /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				79E0807526729BF400F8C33B /* CCCWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		790B37F326691A9C0082EF50 /* Canada Citizenship Countdown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Canada Citizenship Countdown.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,7 +75,6 @@
 		790B380E26691F1A0082EF50 /* ImageButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageButtonStyle.swift; sourceTree = "<group>"; };
 		790B3810266921890082EF50 /* TravelEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelEntry.swift; sourceTree = "<group>"; };
 		790B3813266922160082EF50 /* EntryStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryStatus.swift; sourceTree = "<group>"; };
-		790B3815266922BD0082EF50 /* Date+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		790B38192669251B0082EF50 /* WelcomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		790B381B266925670082EF50 /* NewFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewFeature.swift; sourceTree = "<group>"; };
 		790B381D2669257D0082EF50 /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
@@ -51,6 +84,14 @@
 		790B3828266969F60082EF50 /* EntriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesViewModel.swift; sourceTree = "<group>"; };
 		793981DB267280710061E551 /* EntryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryRow.swift; sourceTree = "<group>"; };
 		79E080612672963300F8C33B /* StatusPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusPicker.swift; sourceTree = "<group>"; };
+		79E0806726729BF300F8C33B /* CCCWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CCCWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		79E0806926729BF300F8C33B /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		79E0806B26729BF300F8C33B /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		79E0806E26729BF300F8C33B /* CCCWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCCWidget.swift; sourceTree = "<group>"; };
+		79E0807026729BF400F8C33B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		79E0807226729BF400F8C33B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79E0808026729EFE00F8C33B /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
+		79E080832672A19800F8C33B /* CCCWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CCCWidgetExtension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,13 +102,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		79E0806426729BF300F8C33B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79E0806C26729BF300F8C33B /* SwiftUI.framework in Frameworks */,
+				79E0806A26729BF300F8C33B /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		790B37EA26691A9C0082EF50 = {
 			isa = PBXGroup;
 			children = (
-				790B37F526691A9C0082EF50 /* Canada Citizenship Countdown */,
+				79E080832672A19800F8C33B /* CCCWidgetExtension.entitlements */,
+				79E0807A26729BFF00F8C33B /* Shared */,
+				790B37F526691A9C0082EF50 /* CCC iOS */,
+				79E0806D26729BF300F8C33B /* CCCWidget */,
+				79E0806826729BF300F8C33B /* Frameworks */,
 				790B37F426691A9C0082EF50 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -76,18 +130,17 @@
 			isa = PBXGroup;
 			children = (
 				790B37F326691A9C0082EF50 /* Canada Citizenship Countdown.app */,
+				79E0806726729BF300F8C33B /* CCCWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		790B37F526691A9C0082EF50 /* Canada Citizenship Countdown */ = {
+		790B37F526691A9C0082EF50 /* CCC iOS */ = {
 			isa = PBXGroup;
 			children = (
 				790B380C26691CDF0082EF50 /* Canada Citizenship Countdown.entitlements */,
 				790B37F626691A9C0082EF50 /* Canada_Citizenship_CountdownApp.swift */,
-				790B3812266922080082EF50 /* Enums */,
 				790B380826691B5D0082EF50 /* Extensions */,
-				790B380526691B0F0082EF50 /* Models */,
 				790B380B26691C5F0082EF50 /* Views */,
 				790B3827266969E00082EF50 /* ViewModels */,
 				790B380D26691EFA0082EF50 /* ViewModifiers */,
@@ -95,7 +148,7 @@
 				790B37FF26691A9D0082EF50 /* Info.plist */,
 				790B37FC26691A9D0082EF50 /* Preview Content */,
 			);
-			path = "Canada Citizenship Countdown";
+			path = "CCC iOS";
 			sourceTree = "<group>";
 		};
 		790B37FC26691A9D0082EF50 /* Preview Content */ = {
@@ -119,7 +172,6 @@
 		790B380826691B5D0082EF50 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				790B3815266922BD0082EF50 /* Date+Ext.swift */,
 				790B380926691B6B0082EF50 /* View+Ext.swift */,
 			);
 			path = Extensions;
@@ -180,6 +232,43 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		79E0806826729BF300F8C33B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				79E0806926729BF300F8C33B /* WidgetKit.framework */,
+				79E0806B26729BF300F8C33B /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		79E0806D26729BF300F8C33B /* CCCWidget */ = {
+			isa = PBXGroup;
+			children = (
+				79E0806E26729BF300F8C33B /* CCCWidget.swift */,
+				79E0807026729BF400F8C33B /* Assets.xcassets */,
+				79E0807226729BF400F8C33B /* Info.plist */,
+			);
+			path = CCCWidget;
+			sourceTree = "<group>";
+		};
+		79E0807A26729BFF00F8C33B /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				79E0807F26729EF400F8C33B /* Extensions */,
+				790B3812266922080082EF50 /* Enums */,
+				790B380526691B0F0082EF50 /* Models */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		79E0807F26729EF400F8C33B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				79E0808026729EFE00F8C33B /* Date+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -190,15 +279,34 @@
 				790B37EF26691A9C0082EF50 /* Sources */,
 				790B37F026691A9C0082EF50 /* Frameworks */,
 				790B37F126691A9C0082EF50 /* Resources */,
+				79E0807926729BF400F8C33B /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				79E0807426729BF400F8C33B /* PBXTargetDependency */,
 			);
 			name = "Canada Citizenship Countdown";
 			productName = "Canada Citizenship Countdown";
 			productReference = 790B37F326691A9C0082EF50 /* Canada Citizenship Countdown.app */;
 			productType = "com.apple.product-type.application";
+		};
+		79E0806626729BF300F8C33B /* CCCWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 79E0807626729BF400F8C33B /* Build configuration list for PBXNativeTarget "CCCWidgetExtension" */;
+			buildPhases = (
+				79E0806326729BF300F8C33B /* Sources */,
+				79E0806426729BF300F8C33B /* Frameworks */,
+				79E0806526729BF300F8C33B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CCCWidgetExtension;
+			productName = CCCWidgetExtension;
+			productReference = 79E0806726729BF300F8C33B /* CCCWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -206,11 +314,14 @@
 		790B37EB26691A9C0082EF50 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1250;
+				LastSwiftUpdateCheck = 1300;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
 					790B37F226691A9C0082EF50 = {
 						CreatedOnToolsVersion = 12.5;
+					};
+					79E0806626729BF300F8C33B = {
+						CreatedOnToolsVersion = 13.0;
 					};
 				};
 			};
@@ -228,6 +339,7 @@
 			projectRoot = "";
 			targets = (
 				790B37F226691A9C0082EF50 /* Canada Citizenship Countdown */,
+				79E0806626729BF300F8C33B /* CCCWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -239,6 +351,14 @@
 			files = (
 				790B37FE26691A9D0082EF50 /* Preview Assets.xcassets in Resources */,
 				790B37FB26691A9D0082EF50 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79E0806526729BF300F8C33B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79E0807126729BF400F8C33B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,8 +376,8 @@
 				790B3826266926510082EF50 /* FormFields.swift in Sources */,
 				79E080622672963300F8C33B /* StatusPicker.swift in Sources */,
 				790B380726691B190082EF50 /* ErrorModel.swift in Sources */,
-				790B3816266922BD0082EF50 /* Date+Ext.swift in Sources */,
 				790B3829266969F60082EF50 /* EntriesViewModel.swift in Sources */,
+				79E0808126729EFE00F8C33B /* Date+Ext.swift in Sources */,
 				790B380F26691F1A0082EF50 /* ImageButtonStyle.swift in Sources */,
 				790B381A2669251B0082EF50 /* WelcomeView.swift in Sources */,
 				790B37F926691A9C0082EF50 /* ContentView.swift in Sources */,
@@ -269,7 +389,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		79E0806326729BF300F8C33B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79E0807D26729DD100F8C33B /* TravelEntry.swift in Sources */,
+				79E0807C26729DCE00F8C33B /* ErrorModel.swift in Sources */,
+				79E0807E26729DD500F8C33B /* NewFeature.swift in Sources */,
+				79E0808226729F3700F8C33B /* Date+Ext.swift in Sources */,
+				79E0807B26729DC900F8C33B /* EntryStatus.swift in Sources */,
+				79E0806F26729BF300F8C33B /* CCCWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		79E0807426729BF400F8C33B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 79E0806626729BF300F8C33B /* CCCWidgetExtension */;
+			targetProxy = 79E0807326729BF400F8C33B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		790B380026691A9D0082EF50 /* Debug */ = {
@@ -391,14 +532,15 @@
 		790B380326691A9D0082EF50 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Canada Citizenship Countdown/Canada Citizenship Countdown.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "CCC iOS/Canada Citizenship Countdown.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Canada Citizenship Countdown/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"CCC iOS\"";
 				DEVELOPMENT_TEAM = K59VZ37S54;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "Canada Citizenship Countdown/Info.plist";
+				INFOPLIST_FILE = "CCC iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -414,14 +556,15 @@
 		790B380426691A9D0082EF50 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Canada Citizenship Countdown/Canada Citizenship Countdown.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "CCC iOS/Canada Citizenship Countdown.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Canada Citizenship Countdown/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"CCC iOS\"";
 				DEVELOPMENT_TEAM = K59VZ37S54;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "Canada Citizenship Countdown/Info.plist";
+				INFOPLIST_FILE = "CCC iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -429,6 +572,64 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.roddy.io.Canada-Citizenship-Countdown";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		79E0807726729BF400F8C33B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = CCCWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K59VZ37S54;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CCCWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CCCWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.roddy.io.Canada-Citizenship-Countdown.CCCWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		79E0807826729BF400F8C33B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = CCCWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K59VZ37S54;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CCCWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CCCWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.roddy.io.Canada-Citizenship-Countdown.CCCWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -451,6 +652,15 @@
 			buildConfigurations = (
 				790B380326691A9D0082EF50 /* Debug */,
 				790B380426691A9D0082EF50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		79E0807626729BF400F8C33B /* Build configuration list for PBXNativeTarget "CCCWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79E0807726729BF400F8C33B /* Debug */,
+				79E0807826729BF400F8C33B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -27,9 +27,4 @@ extension Text {
             .font(.headline)
             .fontWeight(.semibold)
     }
-    
-    func toolbarStyle() -> some View {
-        self
-            .fontWeight(.medium)
-    }
 }

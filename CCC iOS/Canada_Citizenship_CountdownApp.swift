@@ -6,11 +6,16 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 @main
 struct Canada_Citizenship_CountdownApp: App {
     
     @StateObject var viewModel = EntriesViewModel()
+    
+    init() {
+        WidgetCenter.shared.reloadTimelines(ofKind: "CCCWidget")
+    }
     
     var body: some Scene {
         WindowGroup {
