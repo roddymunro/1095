@@ -9,7 +9,7 @@ import SwiftUI
 
 struct EntryFormView: View {
     
-    @Environment(\.dismiss) var dismiss
+    @Environment(\.dismiss) private var dismiss
     
     @ObservedObject var viewModel: EntriesViewModel
     
@@ -75,7 +75,7 @@ struct EntryFormView: View {
             content
                 .navigationTitle("Travel Details")
                 .navigationBarItems(
-                    leading: Button("Cancel", action: { dismiss() }),
+                    leading: Button("Close", action: { dismiss() }),
                     trailing: trailingBarButton
                 )
         }

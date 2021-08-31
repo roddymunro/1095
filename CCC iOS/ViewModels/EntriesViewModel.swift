@@ -17,8 +17,8 @@ class EntriesViewModel: ObservableObject {
     @Published var activeAlert: ActiveAlert?
     @Published var activeSheet: ActiveSheet?
     
-    public var daysToGo: String {
-        "\(calculateDaysToGo())"
+    public var daysToGo: Int {
+        calculateDaysToGo()
     }
     
     init() {
@@ -65,6 +65,10 @@ class EntriesViewModel: ObservableObject {
         activeSheet = .editEntry(entry)
     }
     
+    public func openSettings() {
+        activeSheet = .settings
+    }
+    
     private func calculateDaysToGo() -> Int {
         var daysToGo = 1095
         for entry in entries {
@@ -80,5 +84,5 @@ class EntriesViewModel: ObservableObject {
     }
     
     enum ActiveAlert { case error(_ error: ErrorModel) }
-    enum ActiveSheet { case welcome, addEntry, editEntry(_ entry: TravelEntry) }
+    enum ActiveSheet { case welcome, addEntry, editEntry(_ entry: TravelEntry), settings }
 }

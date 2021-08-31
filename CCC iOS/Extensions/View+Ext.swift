@@ -14,18 +14,6 @@ extension View {
         return UIDevice.current.userInterfaceIdiom == .pad
     }
     
-    @ViewBuilder
-    func `if`<Transform: View>(
-        _ condition: Bool,
-        transform: (Self) -> Transform
-    ) -> some View {
-        if condition {
-            transform(self)
-        } else {
-            self
-        }
-    }
-    
     public func sheet<Content: View, Value>(
         using value: Binding<Value?>,
         @ViewBuilder content: @escaping (Value) -> Content

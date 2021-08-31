@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -36,6 +36,16 @@
 		79E0807E26729DD500F8C33B /* NewFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B381B266925670082EF50 /* NewFeature.swift */; };
 		79E0808126729EFE00F8C33B /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0808026729EFE00F8C33B /* Date+Ext.swift */; };
 		79E0808226729F3700F8C33B /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0808026729EFE00F8C33B /* Date+Ext.swift */; };
+		79E7832126DE6E54009219AA /* ConfettiView in Frameworks */ = {isa = PBXBuildFile; productRef = 79E7832026DE6E54009219AA /* ConfettiView */; };
+		79E7832326DE6F07009219AA /* ConfettiOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E7832226DE6F07009219AA /* ConfettiOverlay.swift */; };
+		79E7832526DE70BD009219AA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E7832426DE70BD009219AA /* SettingsView.swift */; };
+		79E7832826DE71D2009219AA /* RMSettingsRow in Frameworks */ = {isa = PBXBuildFile; productRef = 79E7832726DE71D2009219AA /* RMSettingsRow */; };
+		79E7832A26DE71FA009219AA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E7832926DE71FA009219AA /* SettingsViewModel.swift */; };
+		79E7832C26DE7469009219AA /* WebViewSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E7832B26DE7469009219AA /* WebViewSheet.swift */; };
+		79E7832E26DE7499009219AA /* RMBarButton in Frameworks */ = {isa = PBXBuildFile; productRef = 79E7832D26DE7499009219AA /* RMBarButton */; };
+		79E7833126DE74E5009219AA /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E7833026DE74E5009219AA /* WebView.swift */; };
+		79E7833326DE7521009219AA /* Alert+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E7833226DE7521009219AA /* Alert+Ext.swift */; };
+		79E7833526DE93FD009219AA /* RMDeveloperIntro in Frameworks */ = {isa = PBXBuildFile; productRef = 79E7833426DE93FD009219AA /* RMDeveloperIntro */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +102,12 @@
 		79E0807226729BF400F8C33B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79E0808026729EFE00F8C33B /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		79E080832672A19800F8C33B /* CCCWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CCCWidgetExtension.entitlements; sourceTree = "<group>"; };
+		79E7832226DE6F07009219AA /* ConfettiOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiOverlay.swift; sourceTree = "<group>"; };
+		79E7832426DE70BD009219AA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		79E7832926DE71FA009219AA /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		79E7832B26DE7469009219AA /* WebViewSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewSheet.swift; sourceTree = "<group>"; };
+		79E7833026DE74E5009219AA /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		79E7833226DE7521009219AA /* Alert+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Alert+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +115,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79E7832126DE6E54009219AA /* ConfettiView in Frameworks */,
+				79E7833526DE93FD009219AA /* RMDeveloperIntro in Frameworks */,
+				79E7832826DE71D2009219AA /* RMSettingsRow in Frameworks */,
+				79E7832E26DE7499009219AA /* RMBarButton in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,6 +192,7 @@
 		790B380826691B5D0082EF50 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				79E7833226DE7521009219AA /* Alert+Ext.swift */,
 				790B380926691B6B0082EF50 /* View+Ext.swift */,
 			);
 			path = Extensions;
@@ -207,9 +228,12 @@
 		790B38232669263B0082EF50 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				79E7832F26DE74D6009219AA /* Ported */,
 				790B3825266926510082EF50 /* FormFields.swift */,
 				793981DB267280710061E551 /* EntryRow.swift */,
 				79E080612672963300F8C33B /* StatusPicker.swift */,
+				79E7832226DE6F07009219AA /* ConfettiOverlay.swift */,
+				79E7832B26DE7469009219AA /* WebViewSheet.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -220,6 +244,7 @@
 				790B37F826691A9C0082EF50 /* ContentView.swift */,
 				790B38192669251B0082EF50 /* WelcomeView.swift */,
 				790B3821266925C70082EF50 /* EntryFormView.swift */,
+				79E7832426DE70BD009219AA /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -228,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				790B3828266969F60082EF50 /* EntriesViewModel.swift */,
+				79E7832926DE71FA009219AA /* SettingsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -269,6 +295,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		79E7832F26DE74D6009219AA /* Ported */ = {
+			isa = PBXGroup;
+			children = (
+				79E7833026DE74E5009219AA /* WebView.swift */,
+			);
+			path = Ported;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -287,6 +321,12 @@
 				79E0807426729BF400F8C33B /* PBXTargetDependency */,
 			);
 			name = "Canada Citizenship Countdown";
+			packageProductDependencies = (
+				79E7832026DE6E54009219AA /* ConfettiView */,
+				79E7832726DE71D2009219AA /* RMSettingsRow */,
+				79E7832D26DE7499009219AA /* RMBarButton */,
+				79E7833426DE93FD009219AA /* RMDeveloperIntro */,
+			);
 			productName = "Canada Citizenship Countdown";
 			productReference = 790B37F326691A9C0082EF50 /* Canada Citizenship Countdown.app */;
 			productType = "com.apple.product-type.application";
@@ -334,6 +374,10 @@
 				Base,
 			);
 			mainGroup = 790B37EA26691A9C0082EF50;
+			packageReferences = (
+				79E7831F26DE6E54009219AA /* XCRemoteSwiftPackageReference "ConfettiView" */,
+				79E7832626DE71D2009219AA /* XCRemoteSwiftPackageReference "RMSwiftUI" */,
+			);
 			productRefGroup = 790B37F426691A9C0082EF50 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -375,17 +419,23 @@
 				790B380A26691B6B0082EF50 /* View+Ext.swift in Sources */,
 				790B3826266926510082EF50 /* FormFields.swift in Sources */,
 				79E080622672963300F8C33B /* StatusPicker.swift in Sources */,
+				79E7833326DE7521009219AA /* Alert+Ext.swift in Sources */,
 				790B380726691B190082EF50 /* ErrorModel.swift in Sources */,
 				790B3829266969F60082EF50 /* EntriesViewModel.swift in Sources */,
+				79E7832326DE6F07009219AA /* ConfettiOverlay.swift in Sources */,
 				79E0808126729EFE00F8C33B /* Date+Ext.swift in Sources */,
 				790B380F26691F1A0082EF50 /* ImageButtonStyle.swift in Sources */,
+				79E7832C26DE7469009219AA /* WebViewSheet.swift in Sources */,
 				790B381A2669251B0082EF50 /* WelcomeView.swift in Sources */,
 				790B37F926691A9C0082EF50 /* ContentView.swift in Sources */,
 				790B3822266925C70082EF50 /* EntryFormView.swift in Sources */,
 				790B381C266925670082EF50 /* NewFeature.swift in Sources */,
+				79E7832A26DE71FA009219AA /* SettingsViewModel.swift in Sources */,
 				790B37F726691A9C0082EF50 /* Canada_Citizenship_CountdownApp.swift in Sources */,
 				793981DC267280710061E551 /* EntryRow.swift in Sources */,
 				790B3814266922160082EF50 /* EntryStatus.swift in Sources */,
+				79E7832526DE70BD009219AA /* SettingsView.swift in Sources */,
+				79E7833126DE74E5009219AA /* WebView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,6 +716,48 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		79E7831F26DE6E54009219AA /* XCRemoteSwiftPackageReference "ConfettiView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ziligy/ConfettiView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		79E7832626DE71D2009219AA /* XCRemoteSwiftPackageReference "RMSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/roddymunro/RMSwiftUI";
+			requirement = {
+				branch = "feature/developer-intro";
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		79E7832026DE6E54009219AA /* ConfettiView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 79E7831F26DE6E54009219AA /* XCRemoteSwiftPackageReference "ConfettiView" */;
+			productName = ConfettiView;
+		};
+		79E7832726DE71D2009219AA /* RMSettingsRow */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 79E7832626DE71D2009219AA /* XCRemoteSwiftPackageReference "RMSwiftUI" */;
+			productName = RMSettingsRow;
+		};
+		79E7832D26DE7499009219AA /* RMBarButton */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 79E7832626DE71D2009219AA /* XCRemoteSwiftPackageReference "RMSwiftUI" */;
+			productName = RMBarButton;
+		};
+		79E7833426DE93FD009219AA /* RMDeveloperIntro */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 79E7832626DE71D2009219AA /* XCRemoteSwiftPackageReference "RMSwiftUI" */;
+			productName = RMDeveloperIntro;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 790B37EB26691A9C0082EF50 /* Project object */;
 }

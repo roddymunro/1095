@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ErrorModel: Identifiable {
+public struct ErrorModel: Identifiable {
     public var id = UUID()
     private(set) var title: String
     private var error: Error

@@ -14,7 +14,7 @@ struct Canada_Citizenship_CountdownApp: App {
     @StateObject var viewModel = EntriesViewModel()
     
     init() {
-        WidgetCenter.shared.reloadTimelines(ofKind: "CCCWidget")
+        WidgetCenter.shared.reloadAllTimelines()
     }
     
     var body: some Scene {

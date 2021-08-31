@@ -10,6 +10,9 @@ import SwiftUI
 struct ContentView: View {
     
     @AppStorage("welcomeShown") var welcomeShown: Bool = false
+    @AppStorage("shouldPlayConfetti") var shouldPlayConfetti: Bool = true
+    
+    @State private var isShowingConfetti: Bool = false
     
     @ObservedObject var viewModel: EntriesViewModel
     
@@ -29,26 +32,39 @@ struct ContentView: View {
                         EntryFormView(viewModel: viewModel)
                     case .editEntry(let entry):
                         EntryFormView(viewModel: viewModel, entryToEdit: entry)
+                    case .settings:
+                        SettingsView(viewModel: .init())
                 }
             }
             .onAppear(perform: {
                 if !welcomeShown {
                     viewModel.showWelcome()
                     welcomeShown = true
+                } else if shouldPlayConfetti && viewModel.daysToGo <= 0 {
+                    NotificationCenter.default.post(name: Notification.Name.playConfettiCelebration, object: Bool.self)
                 }
             })
     }
     
     var content: some View {
         GeometryReader { geo in
-            VStack {
-                countdown
-                    .frame(height: geo.size.height / 3)
-                if viewModel.entries.isEmpty {
-                    noEntriesMessage
-                } else {
-                    entriesList
+            ZStack(alignment: .topTrailing) {
+                VStack {
+                    countdown
+                        .frame(height: geo.size.height / 3)
+                    if viewModel.entries.isEmpty {
+                        noEntriesMessage
+                    } else {
+                        entriesList
+                    }
                 }
+                
+                Button(action: viewModel.openSettings, label: {
+                    Image(systemName: "gear")
+                }).padding()
+                    .imageScale(.large)
+                
+                ConfettiCelebrationView(isShowingConfetti: $isShowingConfetti, timeLimit: 3.0)
             }
         }
     }
@@ -56,10 +72,17 @@ struct ContentView: View {
     var countdown: some View {
         ZStack(alignment: .bottomTrailing) {
             VStack {
-                Text(viewModel.daysToGo)
-                    .font(Font.system(size: 72).weight(.black))
-                Text("days to go")
-                    .font(.title3.weight(.medium))
+                if viewModel.daysToGo >= 0 {
+                    Text("\(viewModel.daysToGo)")
+                        .font(Font.system(size: 72).weight(.black))
+                    Text("days to go")
+                        .font(.title3.weight(.medium))
+                } else {
+                    Text("\(-viewModel.daysToGo)")
+                        .font(Font.system(size: 72).weight(.black))
+                    Text("days since you became eligible")
+                        .font(.title3.weight(.medium))
+                }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             

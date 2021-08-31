@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "ConfettiView",
+        "repositoryURL": "https://github.com/ziligy/ConfettiView",
+        "state": {
+          "branch": null,
+          "revision": "296020d5553799f0cdf77470138a8822d8e1e133",
+          "version": "1.1.0"
+        }
+      },
+      {
+        "package": "RMSwiftUI",
+        "repositoryURL": "https://github.com/roddymunro/RMSwiftUI",
+        "state": {
+          "branch": "feature/developer-intro",
+          "revision": "2416bfc6d73231d289dec918ffd8a1c0d545f86b",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

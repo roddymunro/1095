@@ -46,8 +46,10 @@ struct EntryRow: View {
                         .fontWeight(.bold)
                 }
                 
-                Text(entry.details)
-                    .foregroundColor(.secondary)
+                if !entry.details.isEmpty {
+                    Text(entry.details)
+                        .foregroundColor(.secondary)
+                }
             }
         }
         .padding(8)
