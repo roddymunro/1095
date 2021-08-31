@@ -15,6 +15,8 @@ struct SettingsView: View {
     
     @ObservedObject var viewModel: SettingsViewModel
     
+    @AppStorage("shouldPlayConfetti") var shouldPlayConfetti: Bool = true
+    
     var body: some View {
         NavigationView {
             content
@@ -27,7 +29,7 @@ struct SettingsView: View {
                             return .errorAlert(error)
                         case .appVersion:
                             return Alert(
-                                title: Text("You are running Ceramispace v\(viewModel.appVersion)"),
+                                title: Text("You are running version \(viewModel.appVersion)"),
                                 message: Text(""),
                                 dismissButton: .default(Text("Sweet!"))
                             )
@@ -62,16 +64,27 @@ struct SettingsView: View {
                     bio: viewModel.bio,
                     actionButton: .init(action: viewModel.openRoddyWebsite, title: "Open Website", systemImage: "globe")
                 )
-            }
+            }.listRowBackground(Color.cell.edgesIgnoringSafeArea(.all))
+            
+            Section(header: Text("Tip Jar")) {
+                ForEach(viewModel.tips.sorted { $0.key.order < $1.key.order }, id: \.key.id) { option, package in
+                    if let package = package {
+                        TipOptionRow(action: {
+                            viewModel.tipTapped(package)
+                        }, option: option, price: package.localizedPriceString)
+                    }
+                }
+            }.listRowBackground(Color.cell.edgesIgnoringSafeArea(.all))
             
             Section {
-                SettingsRow(icon: "star", text: "Leave a Review", action: viewModel.leaveReviewTapped, block: true)
-            }
+                SettingsToggleRow(icon: "sparkles", text: "Show Confetti When Eligible?", toggledOn: $shouldPlayConfetti, block: true)
+            }.listRowBackground(Color.cell.edgesIgnoringSafeArea(.all))
             
-            Section(header: Text("About")) {
-                SettingsRow(icon: "sparkles", text: "Welcome", action: viewModel.showWelcome, block: true)
-                SettingsRow(icon: "info.circle", text: "App Version", action: viewModel.showAppVersion, block: true)
-            }
+            Section {
+                SettingsRow(icon: "heart.fill", text: "Leave a Review", action: viewModel.leaveReviewTapped, block: true)
+                SettingsRow(icon: "hand.wave.fill", text: "Display Welcome", action: viewModel.showWelcome, block: true)
+                SettingsRow(icon: "info.circle.fill", text: "App Version", action: viewModel.showAppVersion, block: true)
+            }.listRowBackground(Color.cell.edgesIgnoringSafeArea(.all))
         }
     }
 }

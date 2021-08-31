@@ -11,12 +11,21 @@
         }
       },
       {
+        "package": "Purchases",
+        "repositoryURL": "https://github.com/RevenueCat/purchases-ios",
+        "state": {
+          "branch": null,
+          "revision": "05b68cb7e69e536fbbfe79c2be529a012485af96",
+          "version": "3.12.3"
+        }
+      },
+      {
         "package": "RMSwiftUI",
         "repositoryURL": "https://github.com/roddymunro/RMSwiftUI",
         "state": {
-          "branch": "feature/developer-intro",
-          "revision": "2416bfc6d73231d289dec918ffd8a1c0d545f86b",
-          "version": null
+          "branch": null,
+          "revision": "d4da4e4903cd654022058a37cc186a0bf3ed8ca5",
+          "version": "1.0.5"
         }
       }
     ]

@@ -61,8 +61,10 @@ struct ContentView: View {
                 
                 Button(action: viewModel.openSettings, label: {
                     Image(systemName: "gear")
-                }).padding()
-                    .imageScale(.large)
+                        .imageScale(.large)
+                        .font(.title3)
+                        .padding()
+                })
                 
                 ConfettiCelebrationView(isShowingConfetti: $isShowingConfetti, timeLimit: 3.0)
             }

@@ -7,6 +7,7 @@
 
 import SwiftUI
 import WidgetKit
+import Purchases
 
 @main
 struct Canada_Citizenship_CountdownApp: App {
@@ -15,6 +16,10 @@ struct Canada_Citizenship_CountdownApp: App {
     
     init() {
         WidgetCenter.shared.reloadAllTimelines()
+        
+        if let revcat_api_key = Bundle.main.object(forInfoDictionaryKey: "REVENUECAT_API_KEY") as? String {
+            Purchases.configure(withAPIKey: revcat_api_key)
+        }
     }
     
     var body: some Scene {

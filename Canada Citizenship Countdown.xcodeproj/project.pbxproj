@@ -46,6 +46,14 @@
 		79E7833126DE74E5009219AA /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E7833026DE74E5009219AA /* WebView.swift */; };
 		79E7833326DE7521009219AA /* Alert+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E7833226DE7521009219AA /* Alert+Ext.swift */; };
 		79E7833526DE93FD009219AA /* RMDeveloperIntro in Frameworks */ = {isa = PBXBuildFile; productRef = 79E7833426DE93FD009219AA /* RMDeveloperIntro */; };
+		79E7833726DEA0FD009219AA /* TipOptionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E7833626DEA0FD009219AA /* TipOptionRow.swift */; };
+		79E7833926DEA4FE009219AA /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E7833826DEA4FE009219AA /* StoreKit.framework */; };
+		79E7833C26DEABE5009219AA /* Purchases in Frameworks */ = {isa = PBXBuildFile; productRef = 79E7833B26DEABE5009219AA /* Purchases */; };
+		79E7833E26DEAD2F009219AA /* Secrets.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 79E7833D26DEAD2E009219AA /* Secrets.xcconfig */; };
+		79E7834126DEAF0B009219AA /* AppPurchasesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E7834026DEAF0B009219AA /* AppPurchasesAPI.swift */; };
+		79E7834326DEAF21009219AA /* Purchases+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E7834226DEAF21009219AA /* Purchases+Ext.swift */; };
+		79E7834626DEB0EF009219AA /* PurchasesError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E7834526DEB0EF009219AA /* PurchasesError.swift */; };
+		79E7834926DEB201009219AA /* TipOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E7834826DEB201009219AA /* TipOption.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +116,13 @@
 		79E7832B26DE7469009219AA /* WebViewSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewSheet.swift; sourceTree = "<group>"; };
 		79E7833026DE74E5009219AA /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		79E7833226DE7521009219AA /* Alert+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Alert+Ext.swift"; sourceTree = "<group>"; };
+		79E7833626DEA0FD009219AA /* TipOptionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipOptionRow.swift; sourceTree = "<group>"; };
+		79E7833826DEA4FE009219AA /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		79E7833D26DEAD2E009219AA /* Secrets.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
+		79E7834026DEAF0B009219AA /* AppPurchasesAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppPurchasesAPI.swift; sourceTree = "<group>"; };
+		79E7834226DEAF21009219AA /* Purchases+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Purchases+Ext.swift"; sourceTree = "<group>"; };
+		79E7834526DEB0EF009219AA /* PurchasesError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchasesError.swift; sourceTree = "<group>"; };
+		79E7834826DEB201009219AA /* TipOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipOption.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,8 +132,10 @@
 			files = (
 				79E7832126DE6E54009219AA /* ConfettiView in Frameworks */,
 				79E7833526DE93FD009219AA /* RMDeveloperIntro in Frameworks */,
+				79E7833926DEA4FE009219AA /* StoreKit.framework in Frameworks */,
 				79E7832826DE71D2009219AA /* RMSettingsRow in Frameworks */,
 				79E7832E26DE7499009219AA /* RMBarButton in Frameworks */,
+				79E7833C26DEABE5009219AA /* Purchases in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,7 +176,11 @@
 			isa = PBXGroup;
 			children = (
 				790B380C26691CDF0082EF50 /* Canada Citizenship Countdown.entitlements */,
+				79E7833D26DEAD2E009219AA /* Secrets.xcconfig */,
 				790B37F626691A9C0082EF50 /* Canada_Citizenship_CountdownApp.swift */,
+				79E7833F26DEAEFB009219AA /* APIs */,
+				79E7834726DEB1EE009219AA /* Enums */,
+				79E7834426DEB0DD009219AA /* Errors */,
 				790B380826691B5D0082EF50 /* Extensions */,
 				790B380B26691C5F0082EF50 /* Views */,
 				790B3827266969E00082EF50 /* ViewModels */,
@@ -193,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				79E7833226DE7521009219AA /* Alert+Ext.swift */,
+				79E7834226DEAF21009219AA /* Purchases+Ext.swift */,
 				790B380926691B6B0082EF50 /* View+Ext.swift */,
 			);
 			path = Extensions;
@@ -234,6 +256,7 @@
 				79E080612672963300F8C33B /* StatusPicker.swift */,
 				79E7832226DE6F07009219AA /* ConfettiOverlay.swift */,
 				79E7832B26DE7469009219AA /* WebViewSheet.swift */,
+				79E7833626DEA0FD009219AA /* TipOptionRow.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -261,6 +284,7 @@
 		79E0806826729BF300F8C33B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				79E7833826DEA4FE009219AA /* StoreKit.framework */,
 				79E0806926729BF300F8C33B /* WidgetKit.framework */,
 				79E0806B26729BF300F8C33B /* SwiftUI.framework */,
 			);
@@ -303,6 +327,30 @@
 			path = Ported;
 			sourceTree = "<group>";
 		};
+		79E7833F26DEAEFB009219AA /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+				79E7834026DEAF0B009219AA /* AppPurchasesAPI.swift */,
+			);
+			path = APIs;
+			sourceTree = "<group>";
+		};
+		79E7834426DEB0DD009219AA /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				79E7834526DEB0EF009219AA /* PurchasesError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		79E7834726DEB1EE009219AA /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				79E7834826DEB201009219AA /* TipOption.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -326,6 +374,7 @@
 				79E7832726DE71D2009219AA /* RMSettingsRow */,
 				79E7832D26DE7499009219AA /* RMBarButton */,
 				79E7833426DE93FD009219AA /* RMDeveloperIntro */,
+				79E7833B26DEABE5009219AA /* Purchases */,
 			);
 			productName = "Canada Citizenship Countdown";
 			productReference = 790B37F326691A9C0082EF50 /* Canada Citizenship Countdown.app */;
@@ -377,6 +426,7 @@
 			packageReferences = (
 				79E7831F26DE6E54009219AA /* XCRemoteSwiftPackageReference "ConfettiView" */,
 				79E7832626DE71D2009219AA /* XCRemoteSwiftPackageReference "RMSwiftUI" */,
+				79E7833A26DEABE5009219AA /* XCRemoteSwiftPackageReference "purchases-ios" */,
 			);
 			productRefGroup = 790B37F426691A9C0082EF50 /* Products */;
 			projectDirPath = "";
@@ -395,6 +445,7 @@
 			files = (
 				790B37FE26691A9D0082EF50 /* Preview Assets.xcassets in Resources */,
 				790B37FB26691A9D0082EF50 /* Assets.xcassets in Resources */,
+				79E7833E26DEAD2F009219AA /* Secrets.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +468,7 @@
 				790B381E2669257D0082EF50 /* PrimaryButtonStyle.swift in Sources */,
 				790B3811266921890082EF50 /* TravelEntry.swift in Sources */,
 				790B380A26691B6B0082EF50 /* View+Ext.swift in Sources */,
+				79E7834926DEB201009219AA /* TipOption.swift in Sources */,
 				790B3826266926510082EF50 /* FormFields.swift in Sources */,
 				79E080622672963300F8C33B /* StatusPicker.swift in Sources */,
 				79E7833326DE7521009219AA /* Alert+Ext.swift in Sources */,
@@ -429,6 +481,10 @@
 				790B381A2669251B0082EF50 /* WelcomeView.swift in Sources */,
 				790B37F926691A9C0082EF50 /* ContentView.swift in Sources */,
 				790B3822266925C70082EF50 /* EntryFormView.swift in Sources */,
+				79E7834626DEB0EF009219AA /* PurchasesError.swift in Sources */,
+				79E7834126DEAF0B009219AA /* AppPurchasesAPI.swift in Sources */,
+				79E7833726DEA0FD009219AA /* TipOptionRow.swift in Sources */,
+				79E7834326DEAF21009219AA /* Purchases+Ext.swift in Sources */,
 				790B381C266925670082EF50 /* NewFeature.swift in Sources */,
 				79E7832A26DE71FA009219AA /* SettingsViewModel.swift in Sources */,
 				790B37F726691A9C0082EF50 /* Canada_Citizenship_CountdownApp.swift in Sources */,
@@ -465,6 +521,7 @@
 /* Begin XCBuildConfiguration section */
 		790B380026691A9D0082EF50 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79E7833D26DEAD2E009219AA /* Secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -514,7 +571,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -526,6 +583,7 @@
 		};
 		790B380126691A9D0082EF50 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79E7833D26DEAD2E009219AA /* Secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -569,7 +627,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -730,8 +788,16 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/roddymunro/RMSwiftUI";
 			requirement = {
-				branch = "feature/developer-intro";
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		79E7833A26DEABE5009219AA /* XCRemoteSwiftPackageReference "purchases-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RevenueCat/purchases-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -756,6 +822,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 79E7832626DE71D2009219AA /* XCRemoteSwiftPackageReference "RMSwiftUI" */;
 			productName = RMDeveloperIntro;
+		};
+		79E7833B26DEABE5009219AA /* Purchases */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 79E7833A26DEABE5009219AA /* XCRemoteSwiftPackageReference "purchases-ios" */;
+			productName = Purchases;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
