@@ -10,12 +10,11 @@ import SwiftUI
 struct EntryFormView: View {
     
     @Environment(\.dismiss) private var dismiss
-    
-    @ObservedObject var viewModel: EntriesViewModel
+    @Environment(\.managedObjectContext) private var viewContext
     
     var entryToEdit: TravelEntry?
     
-    @State var id: String = UUID().uuidString
+    @State var id: UUID = UUID()
     @State var entryStatus: EntryStatus?
     @State var startDate: Date = Date()
     @State var endDate: Date = Date()
@@ -27,20 +26,19 @@ struct EntryFormView: View {
     
     @FocusState private var focusedField: Field?
     
-    init(viewModel: EntriesViewModel, entryToEdit: TravelEntry?=nil) {
-        self.viewModel = viewModel
+    init(entryToEdit: TravelEntry?=nil) {
         self.entryToEdit = entryToEdit
         
         if let entryToEdit = entryToEdit {
-            self._id = State(initialValue: entryToEdit.id)
+            self._id = State(initialValue: entryToEdit.id ?? UUID())
             self._entryStatus = State(initialValue: entryToEdit.entryStatus)
-            self._startDate = State(initialValue: entryToEdit.startDate)
+            self._startDate = State(initialValue: entryToEdit.startDate ?? Date())
             if let endDate = entryToEdit.endDate {
                 self._endDate = State(initialValue: endDate)
             } else {
                 self._ongoing = State(initialValue: true)
             }
-            self._details = State(initialValue: entryToEdit.details)
+            self._details = State(initialValue: entryToEdit.details ?? "")
         }
     }
     
@@ -112,13 +110,13 @@ struct EntryFormView: View {
     private func addEntryTapped() {
         guard let entryStatus = entryStatus else { return }
         
-        viewModel.addEntry(.init(
-            id: id,
-            entryStatus: entryStatus,
-            startDate: startDate,
-            endDate: ongoing ? nil : endDate,
-            details: details
-        ))
+        let newEntry = TravelEntry(context: viewContext)
+        newEntry.id = id
+        newEntry.entryStatus = entryStatus
+        newEntry.startDate = startDate
+        newEntry.endDate = ongoing ? nil : endDate
+        newEntry.details = details
+        viewContext.saveContext()
         
         resetForm()
     }
@@ -126,19 +124,21 @@ struct EntryFormView: View {
     private func updateEntryTapped() {
         guard let entryStatus = entryStatus else { return }
         
-        viewModel.updateEntry(.init(
-            id: id,
-            entryStatus: entryStatus,
-            startDate: startDate,
-            endDate: ongoing ? nil : endDate,
-            details: details
-        ))
-        
-        dismiss()
+        viewContext.performAndWait {
+            if let entry = entryToEdit {
+                entry.id = id
+                entry.entryStatus = entryStatus
+                entry.startDate = startDate
+                entry.endDate = ongoing ? nil : endDate
+                entry.details = details
+                viewContext.saveContext()
+                dismiss()
+            }
+        }
     }
     
     private func resetForm() {
-        id = UUID().uuidString
+        id = UUID()
         entryStatus = nil
         startDate = Date()
         endDate = Date()
@@ -151,6 +151,6 @@ struct EntryFormView: View {
 
 struct EntryFormView_Previews: PreviewProvider {
     static var previews: some View {
-        EntryFormView(viewModel: .init())
+        EntryFormView()
     }
 }

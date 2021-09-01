@@ -8,8 +8,11 @@
 import SwiftUI
 import Combine
 import Purchases
+import WidgetKit
 
 class SettingsViewModel: ObservableObject {
+    
+    let ud = UserDefaults(suiteName: "group.com.roddy.io.Canada-Citizenship-Countdown")!
     
     let purchasesApi = AppPurchasesAPI()
     private var disposables = Set<AnyCancellable>()
@@ -125,6 +128,9 @@ class SettingsViewModel: ObservableObject {
                     self?.activeAlert = .error(.init("Couldn't Complete Purchase", PurchasesError.missingEntitlement))
                     return
                 }
+                
+                self?.ud.set(true, forKey: "isPaid")
+                WidgetCenter.shared.reloadAllTimelines()
             }
             .store(in: &disposables)
     }

@@ -26,7 +26,7 @@ struct TipOptionRow: View {
                     .padding(.horizontal, 12)
                     .background(Color.accentColor.clipShape(RoundedRectangle(cornerRadius: 6)))
                     .foregroundColor(.white)
-            }
+            }.background(Color.cell.edgesIgnoringSafeArea(.all))
         }.buttonStyle(.plain)
     }
 }

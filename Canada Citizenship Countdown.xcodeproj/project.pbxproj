@@ -22,7 +22,6 @@
 		790B3820266925920082EF50 /* Text+ViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B381F266925920082EF50 /* Text+ViewModifier.swift */; };
 		790B3822266925C70082EF50 /* EntryFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B3821266925C70082EF50 /* EntryFormView.swift */; };
 		790B3826266926510082EF50 /* FormFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B3825266926510082EF50 /* FormFields.swift */; };
-		790B3829266969F60082EF50 /* EntriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B3828266969F60082EF50 /* EntriesViewModel.swift */; };
 		793981DC267280710061E551 /* EntryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793981DB267280710061E551 /* EntryRow.swift */; };
 		79E080622672963300F8C33B /* StatusPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E080612672963300F8C33B /* StatusPicker.swift */; };
 		79E0806A26729BF300F8C33B /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E0806926729BF300F8C33B /* WidgetKit.framework */; };
@@ -54,6 +53,14 @@
 		79E7834326DEAF21009219AA /* Purchases+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E7834226DEAF21009219AA /* Purchases+Ext.swift */; };
 		79E7834626DEB0EF009219AA /* PurchasesError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E7834526DEB0EF009219AA /* PurchasesError.swift */; };
 		79E7834926DEB201009219AA /* TipOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E7834826DEB201009219AA /* TipOption.swift */; };
+		79E7834C26DFBAFC009219AA /* TravelEntry.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 79E7834A26DFBAFC009219AA /* TravelEntry.xcdatamodeld */; };
+		79E7834D26DFBBAE009219AA /* TravelEntry.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 79E7834A26DFBAFC009219AA /* TravelEntry.xcdatamodeld */; };
+		79E7834F26DFBC61009219AA /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E7834E26DFBC61009219AA /* CloudKit.framework */; };
+		79E7835026DFBC7F009219AA /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E7834E26DFBC61009219AA /* CloudKit.framework */; };
+		79E7835326DFBD36009219AA /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E7835226DFBD36009219AA /* CoreDataHelper.swift */; };
+		79E7835426DFBD3A009219AA /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E7835226DFBD36009219AA /* CoreDataHelper.swift */; };
+		79E7835626DFBEFE009219AA /* NSManagedObjectContext+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E7835526DFBEFE009219AA /* NSManagedObjectContext+Ext.swift */; };
+		79E7835726DFBEFE009219AA /* NSManagedObjectContext+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E7835526DFBEFE009219AA /* NSManagedObjectContext+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,7 +106,6 @@
 		790B381F266925920082EF50 /* Text+ViewModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Text+ViewModifier.swift"; sourceTree = "<group>"; };
 		790B3821266925C70082EF50 /* EntryFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryFormView.swift; sourceTree = "<group>"; };
 		790B3825266926510082EF50 /* FormFields.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormFields.swift; sourceTree = "<group>"; };
-		790B3828266969F60082EF50 /* EntriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesViewModel.swift; sourceTree = "<group>"; };
 		793981DB267280710061E551 /* EntryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryRow.swift; sourceTree = "<group>"; };
 		79E080612672963300F8C33B /* StatusPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusPicker.swift; sourceTree = "<group>"; };
 		79E0806726729BF300F8C33B /* CCCWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CCCWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,6 +129,10 @@
 		79E7834226DEAF21009219AA /* Purchases+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Purchases+Ext.swift"; sourceTree = "<group>"; };
 		79E7834526DEB0EF009219AA /* PurchasesError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchasesError.swift; sourceTree = "<group>"; };
 		79E7834826DEB201009219AA /* TipOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipOption.swift; sourceTree = "<group>"; };
+		79E7834B26DFBAFC009219AA /* TravelEntry.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TravelEntry.xcdatamodel; sourceTree = "<group>"; };
+		79E7834E26DFBC61009219AA /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		79E7835226DFBD36009219AA /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
+		79E7835526DFBEFE009219AA /* NSManagedObjectContext+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +140,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79E7834F26DFBC61009219AA /* CloudKit.framework in Frameworks */,
 				79E7832126DE6E54009219AA /* ConfettiView in Frameworks */,
 				79E7833526DE93FD009219AA /* RMDeveloperIntro in Frameworks */,
 				79E7833926DEA4FE009219AA /* StoreKit.framework in Frameworks */,
@@ -143,6 +154,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79E7835026DFBC7F009219AA /* CloudKit.framework in Frameworks */,
 				79E0806C26729BF300F8C33B /* SwiftUI.framework in Frameworks */,
 				79E0806A26729BF300F8C33B /* WidgetKit.framework in Frameworks */,
 			);
@@ -275,7 +287,6 @@
 		790B3827266969E00082EF50 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				790B3828266969F60082EF50 /* EntriesViewModel.swift */,
 				79E7832926DE71FA009219AA /* SettingsViewModel.swift */,
 			);
 			path = ViewModels;
@@ -284,6 +295,7 @@
 		79E0806826729BF300F8C33B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				79E7834E26DFBC61009219AA /* CloudKit.framework */,
 				79E7833826DEA4FE009219AA /* StoreKit.framework */,
 				79E0806926729BF300F8C33B /* WidgetKit.framework */,
 				79E0806B26729BF300F8C33B /* SwiftUI.framework */,
@@ -307,6 +319,8 @@
 				79E0807F26729EF400F8C33B /* Extensions */,
 				790B3812266922080082EF50 /* Enums */,
 				790B380526691B0F0082EF50 /* Models */,
+				79E7835126DFBD1F009219AA /* Utilities */,
+				79E7834A26DFBAFC009219AA /* TravelEntry.xcdatamodeld */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -314,6 +328,7 @@
 		79E0807F26729EF400F8C33B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				79E7835526DFBEFE009219AA /* NSManagedObjectContext+Ext.swift */,
 				79E0808026729EFE00F8C33B /* Date+Ext.swift */,
 			);
 			path = Extensions;
@@ -349,6 +364,14 @@
 				79E7834826DEB201009219AA /* TipOption.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		79E7835126DFBD1F009219AA /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				79E7835226DFBD36009219AA /* CoreDataHelper.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -464,6 +487,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79E7835326DFBD36009219AA /* CoreDataHelper.swift in Sources */,
 				790B3820266925920082EF50 /* Text+ViewModifier.swift in Sources */,
 				790B381E2669257D0082EF50 /* PrimaryButtonStyle.swift in Sources */,
 				790B3811266921890082EF50 /* TravelEntry.swift in Sources */,
@@ -473,12 +497,13 @@
 				79E080622672963300F8C33B /* StatusPicker.swift in Sources */,
 				79E7833326DE7521009219AA /* Alert+Ext.swift in Sources */,
 				790B380726691B190082EF50 /* ErrorModel.swift in Sources */,
-				790B3829266969F60082EF50 /* EntriesViewModel.swift in Sources */,
 				79E7832326DE6F07009219AA /* ConfettiOverlay.swift in Sources */,
 				79E0808126729EFE00F8C33B /* Date+Ext.swift in Sources */,
 				790B380F26691F1A0082EF50 /* ImageButtonStyle.swift in Sources */,
+				79E7835626DFBEFE009219AA /* NSManagedObjectContext+Ext.swift in Sources */,
 				79E7832C26DE7469009219AA /* WebViewSheet.swift in Sources */,
 				790B381A2669251B0082EF50 /* WelcomeView.swift in Sources */,
+				79E7834C26DFBAFC009219AA /* TravelEntry.xcdatamodeld in Sources */,
 				790B37F926691A9C0082EF50 /* ContentView.swift in Sources */,
 				790B3822266925C70082EF50 /* EntryFormView.swift in Sources */,
 				79E7834626DEB0EF009219AA /* PurchasesError.swift in Sources */,
@@ -501,9 +526,12 @@
 			files = (
 				79E0807D26729DD100F8C33B /* TravelEntry.swift in Sources */,
 				79E0807C26729DCE00F8C33B /* ErrorModel.swift in Sources */,
+				79E7835426DFBD3A009219AA /* CoreDataHelper.swift in Sources */,
 				79E0807E26729DD500F8C33B /* NewFeature.swift in Sources */,
 				79E0808226729F3700F8C33B /* Date+Ext.swift in Sources */,
 				79E0807B26729DC900F8C33B /* EntryStatus.swift in Sources */,
+				79E7834D26DFBBAE009219AA /* TravelEntry.xcdatamodeld in Sources */,
+				79E7835726DFBEFE009219AA /* NSManagedObjectContext+Ext.swift in Sources */,
 				79E0806F26729BF300F8C33B /* CCCWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -829,6 +857,19 @@
 			productName = Purchases;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		79E7834A26DFBAFC009219AA /* TravelEntry.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				79E7834B26DFBAFC009219AA /* TravelEntry.xcdatamodel */,
+			);
+			currentVersion = 79E7834B26DFBAFC009219AA /* TravelEntry.xcdatamodel */;
+			path = TravelEntry.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 790B37EB26691A9C0082EF50 /* Project object */;
 }

@@ -12,7 +12,9 @@ import Purchases
 @main
 struct Canada_Citizenship_CountdownApp: App {
     
-    @StateObject var viewModel = EntriesViewModel()
+    private let coreDataHelper = CoreDataHelper.shared
+    
+    @Environment(\.scenePhase) private var scenePhase
     
     init() {
         WidgetCenter.shared.reloadAllTimelines()
@@ -24,7 +26,16 @@ struct Canada_Citizenship_CountdownApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView(viewModel: viewModel)
+            ContentView()
+                .environment(\.managedObjectContext, coreDataHelper.context)
+                .onChange(of: scenePhase) { newPhase in
+                    switch newPhase {
+                        case .active:
+                            print("app now active")
+                        default:
+                            coreDataHelper.saveContext()
+                    }
+                }
         }
     }
 }

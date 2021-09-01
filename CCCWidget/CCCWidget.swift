@@ -7,11 +7,15 @@
 
 import WidgetKit
 import SwiftUI
+import CoreData
 
 struct Provider: TimelineProvider {
     
-    let ud = UserDefaults(suiteName: "group.com.roddy.io.Canada-Citizenship-Countdown")
+    var managedObjectContext: NSManagedObjectContext
     
+    init(context: NSManagedObjectContext) {
+        self.managedObjectContext = context
+    }
     
     func placeholder(in context: Context) -> SimpleEntry {
         SimpleEntry(date: Date(), daysToGo: 128)
@@ -23,21 +27,16 @@ struct Provider: TimelineProvider {
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        if let data = ud?.object(forKey: "travelEntries") as? Data {
-            if let entries = try? JSONDecoder().decode([TravelEntry].self, from: data) {
-                let daysToGo = self.calculateDaysToGo(for: entries)
-                
-                completion(Timeline(
-                    entries: [SimpleEntry(date: Date(), daysToGo: daysToGo)],
-                    policy: .after(Calendar.current.startOfDay(for: Date.tomorrow))
-                ))
-            } else {
-                completion(Timeline(
-                    entries: [SimpleEntry(date: Date(), daysToGo: 1095)],
-                    policy: .after(Calendar.current.startOfDay(for: Date.tomorrow))
-                ))
-            }
-        } else {
+        let request = NSFetchRequest<TravelEntry>(entityName: "TravelEntry")
+        do {
+            let entries = try managedObjectContext.fetch(request)
+            let daysToGo = self.calculateDaysToGo(for: entries)
+            
+            completion(Timeline(
+                entries: [SimpleEntry(date: Date(), daysToGo: daysToGo)],
+                policy: .after(Calendar.current.startOfDay(for: Date.tomorrow))
+            ))
+        } catch {
             completion(Timeline(
                 entries: [SimpleEntry(date: Date(), daysToGo: 1095)],
                 policy: .after(Calendar.current.startOfDay(for: Date.tomorrow))
@@ -48,13 +47,15 @@ struct Provider: TimelineProvider {
     private func calculateDaysToGo(for entries: [TravelEntry]) -> Int {
         var daysToGo = 1095
         for entry in entries {
-            let calendar = Calendar.current
-            let startDate = calendar.startOfDay(for: entry.startDate)
-            let endDate = calendar.startOfDay(for: entry.endDate ?? Date())
+            if let start = entry.startDate {
+                let calendar = Calendar.current
+                let startDate = calendar.startOfDay(for: start)
+                let endDate = calendar.startOfDay(for: entry.endDate ?? Date())
 
-            let components = calendar.dateComponents([.day], from: startDate, to: endDate)
-            
-            daysToGo -= (components.day ?? 0) / entry.entryStatus.divider
+                let components = calendar.dateComponents([.day], from: startDate, to: endDate)
+                
+                daysToGo -= (components.day ?? 0) / entry.entryStatus.divider
+            }
         }
         return daysToGo
     }
@@ -67,27 +68,59 @@ struct SimpleEntry: TimelineEntry {
 
 struct CCCWidgetEntryView : View {
     var entry: Provider.Entry
+    
+    let ud = UserDefaults(suiteName: "group.com.roddy.io.Canada-Citizenship-Countdown")!
 
     var body: some View {
-        VStack {
-            Text("\(entry.daysToGo)")
-                .minimumScaleFactor(0.4)
-                .font(Font.system(size: 72).weight(.black))
-                .lineLimit(1)
-            Text("days to go")
-                .font(.title3.weight(.medium))
+        Group {
+//            let isPaid = ud.bool(forKey: "isPaid")
+//            if isPaid {
+                content
+//            } else {
+//                notPaid
+//            }
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .padding()
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .padding()
+    }
+    
+    var content: some View {
+        VStack {
+            if entry.daysToGo >= 0 {
+                Text("\(entry.daysToGo)")
+                    .font(.system(size: 64).weight(.black))
+                    .minimumScaleFactor(0.4)
+                Text("days to go")
+                    .font(.title3.weight(.medium))
+            } else {
+                Text("\(-entry.daysToGo)")
+                    .font(.system(size: 64).weight(.black))
+                    .minimumScaleFactor(0.4)
+                Text("days since you became eligible")
+                    .font(.callout.weight(.medium))
+            }
+        }
+    }
+    
+    var notPaid: some View {
+        VStack(spacing: 4) {
+            Text("Tip Required")
+                .font(.system(size: 20).weight(.bold))
+                .lineLimit(1)
+            Text("Please leave a tip in the app to use the widget.")
+                .font(.system(size: 14).weight(.medium))
+        }.multilineTextAlignment(.center)
     }
 }
 
 @main
 struct CCCWidget: Widget {
+    
+    private let coreDataHelper = CoreDataHelper.shared
     let kind: String = "CCCWidget"
 
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: Provider()) { entry in
+        StaticConfiguration(kind: kind, provider: Provider(context: coreDataHelper.context)) { entry in
             CCCWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("Citizenship Countdown Widget")

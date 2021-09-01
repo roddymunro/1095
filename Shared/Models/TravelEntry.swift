@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct TravelEntry: Identifiable {
-    var id: String
-    var entryStatus: EntryStatus
-    var startDate: Date
-    var endDate: Date? = nil
-    var details: String
+extension TravelEntry {
+    var entryStatus: EntryStatus {
+        get {
+            return EntryStatus(rawValue: self.entryStatusValue!)!
+        }
+        set {
+            self.entryStatusValue = newValue.rawValue
+        }
+    }
 }
-
-extension TravelEntry: Codable {}
-extension TravelEntry: Equatable {}
