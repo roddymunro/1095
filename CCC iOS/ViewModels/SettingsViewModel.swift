@@ -8,7 +8,6 @@
 import SwiftUI
 import Combine
 import Purchases
-import WidgetKit
 
 class SettingsViewModel: ObservableObject {
     
@@ -82,6 +81,12 @@ class SettingsViewModel: ObservableObject {
         }
     }
     
+    public func openConfettiView() {
+        if let url = URL(string: "https://github.com/ziligy/ConfettiView/blob/master/LICENSE") {
+            activeSheet = .webview(url)
+        }
+    }
+    
     public func fetchPackages() {
         purchasesApi
             .offerings()
@@ -119,18 +124,16 @@ class SettingsViewModel: ObservableObject {
                     self?.activeAlert = .error(.init("Couldn't Complete Purchase", error))
                 }
             } receiveValue: { [weak self] result in
+                guard let self = self else { return }
                 guard result.transaction.transactionState != .failed else {
-                    self?.activeAlert = .error(.init("Couldn't Complete Purchase", PurchasesError.transactionFailed))
+                    self.activeAlert = .error(.init("Couldn't Complete Purchase", PurchasesError.transactionFailed))
                     return
                 }
                 
                 guard result.purchaserInfo.entitlements["Premium"] != nil else {
-                    self?.activeAlert = .error(.init("Couldn't Complete Purchase", PurchasesError.missingEntitlement))
+                    self.activeAlert = .error(.init("Couldn't Complete Purchase", PurchasesError.missingEntitlement))
                     return
                 }
-                
-                self?.ud.set(true, forKey: "isPaid")
-                WidgetCenter.shared.reloadAllTimelines()
             }
             .store(in: &disposables)
     }

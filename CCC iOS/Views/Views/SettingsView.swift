@@ -85,6 +85,10 @@ struct SettingsView: View {
                 SettingsRow(icon: "hand.wave.fill", text: "Display Welcome", action: viewModel.showWelcome, block: true)
                 SettingsRow(icon: "info.circle.fill", text: "App Version", action: viewModel.showAppVersion, block: true)
             }.listRowBackground(Color.cell.edgesIgnoringSafeArea(.all))
+            
+            Section(header: Text("With Thanks To")) {
+                SettingsRow(icon: "sparkle", text: "ConfettiView", action: viewModel.openConfettiView, block: true)
+            }
         }
     }
 }

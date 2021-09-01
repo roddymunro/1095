@@ -73,12 +73,11 @@ struct CCCWidgetEntryView : View {
 
     var body: some View {
         Group {
-//            let isPaid = ud.bool(forKey: "isPaid")
-//            if isPaid {
+            if ud.bool(forKey: "isPaid") {
                 content
-//            } else {
-//                notPaid
-//            }
+            } else {
+                notPaid
+            }
         }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .padding()

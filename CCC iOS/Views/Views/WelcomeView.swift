@@ -10,11 +10,9 @@ struct WelcomeView: View {
     @Environment(\.dismiss) var dismiss
     
     let newFeatures: [NewFeature] = [
-        NewFeature(iconName: "exclamationmark.triangle.fill", title: "Please Note", description: "This app was designed to be used for checking Family Sponsorship applications for Permanent Residency in Canada. Other application types are not compatible and will likely not work."),
-        NewFeature(iconName: "lock.fill", title: "Data Privacy", description: "The information you submit in this app is not collected in any way and cannot be seen by anyone but yourself. When you submit your information, it is only used to get your application status from ECAS in this app. If you delete the app, your information will be wiped from your device."),
-        NewFeature(iconName: "square.grid.3x3.topleft.fill", title: "Widget", description: "A widget is available as a part of this app. In order to use it, you must fill out your information inside the app first. Once set up, it will refresh automatically every 3 hours."),
-        NewFeature(iconName: "star.fill", title: "Support the Developer", description: "Please consider leaving a positive review on the App Store. There is also the option to 'tip' the developer inside the app, though this is not mandatory, it is very much appreciated!"),
-        NewFeature(iconName: "heart.fill", title: "Best of Luck", description: "Finally, I'd like to wish you the best of luck with your application. I've been through this process myself, and I hope this app will make it even the slightest bit easier for you.")
+        NewFeature(iconName: "exclamationmark.triangle.fill", title: "Please Note", description: "Before applying for your Canadian citizenship, always double-check your eligibility on the Government of Canada website."),
+        NewFeature(iconName: "square.grid.3x3.topleft.fill", title: "Unlock Widgets", description: "While this app is free, a widget is available for those that leave a tip. You can leave a tip on the 'Settings' screen."),
+        NewFeature(iconName: "star.fill", title: "Support the Developer", description: "Please consider leaving a positive review on the App Store. There is also the option to 'tip' the developer inside the app, though this is not mandatory, it is very much appreciated!")
     ]
     
     var body: some View {

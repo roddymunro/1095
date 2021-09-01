@@ -9,6 +9,7 @@
 import Foundation
 import Purchases
 import Combine
+import WidgetKit
 
 enum PurchaseError: Error {
     case noResultError
@@ -21,6 +22,9 @@ struct PurchaseResult {
 }
 
 extension Purchases {
+    
+    static let ud = UserDefaults(suiteName: "group.com.roddy.io.Canada-Citizenship-Countdown")!
+    
     func offerings() -> Future<Purchases.Offerings, Error> {
         Future { promise in
             Purchases.shared.offerings { (offerings, error) in
@@ -71,6 +75,8 @@ extension Purchases {
                 } else if userCancelled {
                     promise(.failure(PurchaseError.userCancelled))
                 } else if let transaction = transaction, let info = purchaserInfo {
+                    Self.ud.set(true, forKey: "isPaid")
+                    WidgetCenter.shared.reloadAllTimelines()
                     promise(.success(PurchaseResult(transaction: transaction, purchaserInfo: info)))
                 } else {
                     promise(.failure(PurchaseError.noResultError))
