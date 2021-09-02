@@ -14,15 +14,15 @@ struct EntryFormView: View {
     
     var entryToEdit: TravelEntry?
     
-    @State var id: UUID = UUID()
-    @State var entryStatus: EntryStatus?
-    @State var startDate: Date = Date()
-    @State var endDate: Date = Date()
-    @State var details: String = ""
+    @State private var id: UUID = UUID()
+    @State private var entryStatus: EntryStatus?
+    @State private var startDate: Date = Date()
+    @State private var endDate: Date = Date()
+    @State private var details: String = ""
+    @State private var ongoing: Bool = false
+    @State private var isSaving: Bool = false
     
-    @State var ongoing: Bool = false
-    
-    @State var isSaving: Bool = false
+    @State private var activeAlert: ActiveAlert?
     
     @FocusState private var focusedField: Field?
     
@@ -94,6 +94,12 @@ struct EntryFormView: View {
                     leading: Button("Close", action: { dismiss() }),
                     trailing: trailingBarButton
                 )
+                .alert(using: $activeAlert) { alert in
+                    switch alert {
+                        case .error(let error):
+                            return .errorAlert(error)
+                    }
+                }
         }
     }
     
@@ -125,33 +131,48 @@ struct EntryFormView: View {
         }
     }
     
+    private func performValidation() throws {
+        guard entryStatus != nil else { throw ValidationError.noEntryStatus }
+        guard startDate < endDate else { throw ValidationError.startAfterEnd }
+        guard startDate < Date() else { throw ValidationError.startAfterToday }
+        guard endDate < Date() else { throw ValidationError.endAfterToday }
+    }
+    
     private func addEntryTapped() {
-        guard let entryStatus = entryStatus else { return }
-        
-        let newEntry = TravelEntry(context: viewContext)
-        newEntry.id = id
-        newEntry.entryStatus = entryStatus
-        newEntry.startDate = startDate
-        newEntry.endDate = ongoing ? nil : endDate
-        newEntry.details = details
-        viewContext.saveContext()
-        
-        resetForm()
+        do {
+            try performValidation()
+            
+            let newEntry = TravelEntry(context: viewContext)
+            newEntry.id = id
+            newEntry.entryStatus = entryStatus!
+            newEntry.startDate = startDate
+            newEntry.endDate = ongoing ? nil : endDate
+            newEntry.details = details
+            viewContext.saveContext()
+            
+            resetForm()
+        } catch {
+            self.activeAlert = .error(.init("Couldn't Add Entry", error))
+        }
     }
     
     private func updateEntryTapped() {
-        guard let entryStatus = entryStatus else { return }
-        
-        viewContext.performAndWait {
-            if let entry = entryToEdit {
-                entry.id = id
-                entry.entryStatus = entryStatus
-                entry.startDate = startDate
-                entry.endDate = ongoing ? nil : endDate
-                entry.details = details
-                viewContext.saveContext()
-                dismiss()
+        do {
+            try performValidation()
+            
+            viewContext.performAndWait {
+                if let entry = entryToEdit {
+                    entry.id = id
+                    entry.entryStatus = entryStatus!
+                    entry.startDate = startDate
+                    entry.endDate = ongoing ? nil : endDate
+                    entry.details = details
+                    viewContext.saveContext()
+                    dismiss()
+                }
             }
+        } catch {
+            self.activeAlert = .error(.init("Couldn't Save Entry", error))
         }
     }
     
@@ -165,6 +186,10 @@ struct EntryFormView: View {
     }
     
     enum Field { case details }
+}
+
+extension EntryFormView {
+    enum ActiveAlert { case error(_ error: ErrorModel) }
 }
 
 struct EntryFormView_Previews: PreviewProvider {

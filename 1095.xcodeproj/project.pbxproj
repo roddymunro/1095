@@ -65,6 +65,8 @@
 		79E7835A26E13F04009219AA /* Double+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E7835826E13F04009219AA /* Double+Ext.swift */; };
 		79E7835C26E14B92009219AA /* WarningMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E7835B26E14B92009219AA /* WarningMessage.swift */; };
 		79E7835D26E14B92009219AA /* WarningMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E7835B26E14B92009219AA /* WarningMessage.swift */; };
+		79E7835F26E15DE6009219AA /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E7835E26E15DE6009219AA /* ValidationError.swift */; };
+		79E7836026E15DE6009219AA /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E7835E26E15DE6009219AA /* ValidationError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,6 +141,7 @@
 		79E7835526DFBEFE009219AA /* NSManagedObjectContext+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Ext.swift"; sourceTree = "<group>"; };
 		79E7835826E13F04009219AA /* Double+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Ext.swift"; sourceTree = "<group>"; };
 		79E7835B26E14B92009219AA /* WarningMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningMessage.swift; sourceTree = "<group>"; };
+		79E7835E26E15DE6009219AA /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -362,6 +365,7 @@
 			isa = PBXGroup;
 			children = (
 				79E7834526DEB0EF009219AA /* PurchasesError.swift */,
+				79E7835E26E15DE6009219AA /* ValidationError.swift */,
 			);
 			path = Errors;
 			sourceTree = "<group>";
@@ -524,6 +528,7 @@
 				790B37F726691A9C0082EF50 /* Canada_Citizenship_CountdownApp.swift in Sources */,
 				79E7835926E13F04009219AA /* Double+Ext.swift in Sources */,
 				793981DC267280710061E551 /* EntryRow.swift in Sources */,
+				79E7835F26E15DE6009219AA /* ValidationError.swift in Sources */,
 				790B3814266922160082EF50 /* EntryStatus.swift in Sources */,
 				79E7832526DE70BD009219AA /* SettingsView.swift in Sources */,
 				79E7833126DE74E5009219AA /* WebView.swift in Sources */,
@@ -539,6 +544,7 @@
 				79E7835426DFBD3A009219AA /* CoreDataHelper.swift in Sources */,
 				79E0807E26729DD500F8C33B /* NewFeature.swift in Sources */,
 				79E0808226729F3700F8C33B /* Date+Ext.swift in Sources */,
+				79E7836026E15DE6009219AA /* ValidationError.swift in Sources */,
 				79E7835A26E13F04009219AA /* Double+Ext.swift in Sources */,
 				79E7835D26E14B92009219AA /* WarningMessage.swift in Sources */,
 				79E0807B26729DC900F8C33B /* EntryStatus.swift in Sources */,
