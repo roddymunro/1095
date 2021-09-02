@@ -437,7 +437,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 790B37EE26691A9C0082EF50 /* Build configuration list for PBXProject "Canada Citizenship Countdown" */;
+			buildConfigurationList = 790B37EE26691A9C0082EF50 /* Build configuration list for PBXProject "1095" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -774,7 +774,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		790B37EE26691A9C0082EF50 /* Build configuration list for PBXProject "Canada Citizenship Countdown" */ = {
+		790B37EE26691A9C0082EF50 /* Build configuration list for PBXProject "1095" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				790B380026691A9D0082EF50 /* Debug */,
