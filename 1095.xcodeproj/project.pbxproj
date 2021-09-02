@@ -63,6 +63,8 @@
 		79E7835726DFBEFE009219AA /* NSManagedObjectContext+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E7835526DFBEFE009219AA /* NSManagedObjectContext+Ext.swift */; };
 		79E7835926E13F04009219AA /* Double+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E7835826E13F04009219AA /* Double+Ext.swift */; };
 		79E7835A26E13F04009219AA /* Double+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E7835826E13F04009219AA /* Double+Ext.swift */; };
+		79E7835C26E14B92009219AA /* WarningMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E7835B26E14B92009219AA /* WarningMessage.swift */; };
+		79E7835D26E14B92009219AA /* WarningMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E7835B26E14B92009219AA /* WarningMessage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +138,7 @@
 		79E7835226DFBD36009219AA /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		79E7835526DFBEFE009219AA /* NSManagedObjectContext+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Ext.swift"; sourceTree = "<group>"; };
 		79E7835826E13F04009219AA /* Double+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Ext.swift"; sourceTree = "<group>"; };
+		79E7835B26E14B92009219AA /* WarningMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningMessage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,6 +275,7 @@
 				79E7832226DE6F07009219AA /* ConfettiOverlay.swift */,
 				79E7832B26DE7469009219AA /* WebViewSheet.swift */,
 				79E7833626DEA0FD009219AA /* TipOptionRow.swift */,
+				79E7835B26E14B92009219AA /* WarningMessage.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -501,6 +505,7 @@
 				79E080622672963300F8C33B /* StatusPicker.swift in Sources */,
 				79E7833326DE7521009219AA /* Alert+Ext.swift in Sources */,
 				790B380726691B190082EF50 /* ErrorModel.swift in Sources */,
+				79E7835C26E14B92009219AA /* WarningMessage.swift in Sources */,
 				79E7832326DE6F07009219AA /* ConfettiOverlay.swift in Sources */,
 				79E0808126729EFE00F8C33B /* Date+Ext.swift in Sources */,
 				790B380F26691F1A0082EF50 /* ImageButtonStyle.swift in Sources */,
@@ -535,6 +540,7 @@
 				79E0807E26729DD500F8C33B /* NewFeature.swift in Sources */,
 				79E0808226729F3700F8C33B /* Date+Ext.swift in Sources */,
 				79E7835A26E13F04009219AA /* Double+Ext.swift in Sources */,
+				79E7835D26E14B92009219AA /* WarningMessage.swift in Sources */,
 				79E0807B26729DC900F8C33B /* EntryStatus.swift in Sources */,
 				79E7834D26DFBBAE009219AA /* TravelEntry.xcdatamodeld in Sources */,
 				79E7835726DFBEFE009219AA /* NSManagedObjectContext+Ext.swift in Sources */,

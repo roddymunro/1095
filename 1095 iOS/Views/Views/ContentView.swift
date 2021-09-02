@@ -14,7 +14,7 @@ struct ContentView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
     
-    @FetchRequest(entity: TravelEntry.entity(), sortDescriptors: [])
+    @FetchRequest(entity: TravelEntry.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \TravelEntry.startDate, ascending: false)])
     
     var entries: FetchedResults<TravelEntry>
     
@@ -24,6 +24,23 @@ struct ContentView: View {
     
     public var daysToGo: Double {
         entries.map { $0.daysContribution }.reduce(1095, -)
+    }
+    
+    public var isOverlapped: Bool {
+        var prevEntryDate: Date?
+        for entry in entries {
+            if let startDate = entry.startDate {
+                if startDate > entry.endDate ?? Date() {
+                    return true
+                } else if let prevEntryDate = prevEntryDate {
+                    if prevEntryDate < startDate || prevEntryDate < entry.endDate ?? Date() {
+                        return true
+                    }
+                }
+            }
+            prevEntryDate = entry.endDate ?? Date()
+        }
+        return false
     }
     
     var body: some View {
@@ -62,6 +79,7 @@ struct ContentView: View {
                 VStack {
                     countdown
                         .frame(height: geo.size.height / 3)
+                    
                     if entries.isEmpty {
                         noEntriesMessage
                     } else {
@@ -120,10 +138,15 @@ struct ContentView: View {
     }
     
     var entriesList: some View {
-        List(entries.sorted { $0.startDate! > $1.startDate! }) { entry in
-            Button(action: { activeSheet = .editEntry(entry) }) {
-                EntryRow(entry: entry)
+        List {
+            if isOverlapped {
+                WarningMessage(text: "A date overlap has been detected. The number you see above may be inaccurate until you correct the dates.")
             }
+            
+            ForEach(entries) { entry in
+                Button(action: { activeSheet = .editEntry(entry) }) {
+                    EntryRow(entry: entry)
+                }
                 .buttonStyle(.plain)
                 .swipeActions(edge: .trailing, allowsFullSwipe: false) {
                     Button(role: .destructive) {
@@ -137,6 +160,7 @@ struct ContentView: View {
                         Label("Edit", systemImage: "square.and.pencil")
                     }).tint(.orange)
                 }
+            }
         }
         .id(UUID())
     }

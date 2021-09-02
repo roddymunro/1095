@@ -63,6 +63,10 @@ struct SettingsView: View {
             }.listRowBackground(Color.cell.edgesIgnoringSafeArea(.all))
             
             Section {
+                SettingsToggleRow(icon: "sparkles", text: "Show Confetti When Eligible?", toggledOn: $shouldPlayConfetti, block: true)
+            }.listRowBackground(Color.cell.edgesIgnoringSafeArea(.all))
+            
+            Section {
                 DeveloperIntro(
                     profileImage: Image("DeveloperImage"),
                     bio: viewModel.bio,
@@ -78,10 +82,6 @@ struct SettingsView: View {
                         }, option: option, price: package.localizedPriceString)
                     }
                 }
-            }.listRowBackground(Color.cell.edgesIgnoringSafeArea(.all))
-            
-            Section {
-                SettingsToggleRow(icon: "sparkles", text: "Show Confetti When Eligible?", toggledOn: $shouldPlayConfetti, block: true)
             }.listRowBackground(Color.cell.edgesIgnoringSafeArea(.all))
             
             Section {

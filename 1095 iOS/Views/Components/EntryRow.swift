@@ -20,8 +20,9 @@ struct EntryRow: View {
                     .font(.largeTitle.weight(.bold))
                     .lineLimit(1)
                 Text(entry.daysContribution == 1 ? "day" : "days")
-            }
-                .frame(width: 48)
+                    .lineLimit(1)
+            }.frame(width: isIpad ? 64 : 48)
+            
             VStack(alignment: .leading, spacing: 4) {
                 if let startDate = entry.startDate {
                     if let endDate = entry.endDate {
@@ -37,7 +38,7 @@ struct EntryRow: View {
                     Text(details)
                         .foregroundColor(.secondary)
                 }
-            }
+            }.frame(maxWidth: .infinity, alignment: .leading)
         }
         .padding(8)
     }
