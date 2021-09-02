@@ -15,19 +15,19 @@ enum EntryStatus: StringLiteralType, CaseIterable {
     case worker = "Worker"
     case visitor = "Visitor"
     
-    var divider: Int {
+    var multiplier: Double {
         switch self {
             case .permanentResident:
                 return 1
             default:
-                return 2
+                return 0.5
         }
     }
     
     var daysContributionString: String {
-        if divider == 1 {
+        if multiplier == 1 {
             return "one day"
-        } else if divider == 2 {
+        } else if multiplier == 0.5 {
             return "half a day"
         } else {
             return ""
