@@ -43,6 +43,10 @@ struct ContentView: View {
         return false
     }
     
+    var earliestEligibleDate: Date? {
+        Calendar.current.date(byAdding: .day, value: Int(daysToGo), to: Date())
+    }
+    
     var body: some View {
         content
             .alert(using: $activeAlert) { alert in
@@ -80,10 +84,18 @@ struct ContentView: View {
                     countdown
                         .frame(height: geo.size.height / 3)
                     
-                    if entries.isEmpty {
-                        noEntriesMessage
-                    } else {
-                        entriesList
+                    ZStack(alignment: .bottomTrailing) {
+                        if entries.isEmpty {
+                            noEntriesMessage
+                        } else {
+                            entriesList
+                        }
+                        
+                        Button(action: { activeSheet = .addEntry }) {
+                            Image(systemName: "plus")
+                        }
+                            .buttonStyle(.image)
+                            .padding()
                     }
                 }
                 
@@ -100,14 +112,21 @@ struct ContentView: View {
     }
     
     var countdown: some View {
-        ZStack(alignment: .bottomTrailing) {
-            VStack {
-                if daysToGo >= 0 {
+        VStack(spacing: 4) {
+            if daysToGo >= 0 {
+                VStack(spacing: 0) {
                     Text(daysToGo.formatToWholeNumberOrOneDecimalPoint())
                         .font(.system(size: 72).weight(.black))
                     Text("days to go")
                         .font(.title3.weight(.medium))
-                } else {
+                }
+                if let earliestEligibleDate = earliestEligibleDate {
+                    Text("Earliest eligibility on \(earliestEligibleDate.formatted(date: .long, time: .omitted))")
+                        .font(.title3.weight(.medium))
+                        .foregroundColor(.secondary)
+                }
+            } else {
+                VStack(spacing: 0) {
                     let daysToGo = -daysToGo
                     Text(daysToGo.formatToWholeNumberOrOneDecimalPoint())
                         .font(.system(size: 72).weight(.black))
@@ -115,15 +134,8 @@ struct ContentView: View {
                         .font(.title3.weight(.medium))
                 }
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            
-            Button(action: { activeSheet = .addEntry }) {
-                Image(systemName: "plus")
-            }
-                .buttonStyle(.image)
-                .padding()
-            
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
     
     var noEntriesMessage: some View {

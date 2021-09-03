@@ -18,11 +18,11 @@ struct Provider: TimelineProvider {
     }
     
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), daysToGo: 128)
+        SimpleEntry(date: Date(), daysToGo: 128, isPlaceholder: true)
     }
 
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), daysToGo: 128)
+        let entry = SimpleEntry(date: Date(), daysToGo: 128, isPlaceholder: true)
         completion(entry)
     }
 
@@ -48,6 +48,7 @@ struct Provider: TimelineProvider {
 struct SimpleEntry: TimelineEntry {
     let date: Date
     var daysToGo: Double
+    var isPlaceholder: Bool = false
 }
 
 struct CCCWidgetEntryView : View {
@@ -57,7 +58,7 @@ struct CCCWidgetEntryView : View {
 
     var body: some View {
         Group {
-            if ud.bool(forKey: "isPaid") {
+            if ud.bool(forKey: "isPaid") || entry.isPlaceholder {
                 content
             } else {
                 notPaid
@@ -101,13 +102,13 @@ struct CCCWidgetEntryView : View {
 struct CCCWidget: Widget {
     
     private let coreDataHelper = CoreDataHelper.shared
-    let kind: String = "CCCWidget"
+    let kind: String = "1095Widget"
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider(context: coreDataHelper.context)) { entry in
             CCCWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("Citizenship Countdown Widget")
+        .configurationDisplayName("1095 Widget")
         .description("This widget will show the number of days remaining until you can apply for Canadian citizenship.")
         .supportedFamilies([.systemSmall])
     }

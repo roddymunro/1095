@@ -93,6 +93,12 @@ class SettingsViewModel: ObservableObject {
         }
     }
     
+    public func openPrivacyPolicy() {
+        if let url = URL(string: "https://gist.github.com/roddymunro/5cb2a382a6785b5847fbb4f6109615b8") {
+            activeSheet = .webview(url)
+        }
+    }
+    
     public func fetchPackages() {
         purchasesApi
             .offerings()

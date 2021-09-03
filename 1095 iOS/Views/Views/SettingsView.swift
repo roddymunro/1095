@@ -87,6 +87,7 @@ struct SettingsView: View {
             Section {
                 SettingsRow(icon: "heart.fill", text: "Leave a Review", action: viewModel.leaveReviewTapped, block: true)
                 SettingsRow(icon: "hand.wave.fill", text: "Display Welcome", action: viewModel.showWelcome, block: true)
+                SettingsRow(icon: "lock.doc.fill", text: "Privacy Policy", action: viewModel.openPrivacyPolicy, block: true)
                 SettingsRow(icon: "info.circle.fill", text: "App Version", action: viewModel.showAppVersion, block: true)
             }.listRowBackground(Color.cell.edgesIgnoringSafeArea(.all))
             

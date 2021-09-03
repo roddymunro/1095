@@ -67,6 +67,7 @@
 		79E7835D26E14B92009219AA /* WarningMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E7835B26E14B92009219AA /* WarningMessage.swift */; };
 		79E7835F26E15DE6009219AA /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E7835E26E15DE6009219AA /* ValidationError.swift */; };
 		79E7836026E15DE6009219AA /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E7835E26E15DE6009219AA /* ValidationError.swift */; };
+		79E7836226E25175009219AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79E7836126E25175009219AA /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,7 +103,7 @@
 		790B37FF26691A9D0082EF50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		790B380626691B190082EF50 /* ErrorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
 		790B380926691B6B0082EF50 /* View+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
-		790B380C26691CDF0082EF50 /* Canada Citizenship Countdown.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Canada Citizenship Countdown.entitlements"; sourceTree = "<group>"; };
+		790B380C26691CDF0082EF50 /* 1095.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = 1095.entitlements; sourceTree = "<group>"; };
 		790B380E26691F1A0082EF50 /* ImageButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageButtonStyle.swift; sourceTree = "<group>"; };
 		790B3810266921890082EF50 /* TravelEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelEntry.swift; sourceTree = "<group>"; };
 		790B3813266922160082EF50 /* EntryStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryStatus.swift; sourceTree = "<group>"; };
@@ -142,6 +143,7 @@
 		79E7835826E13F04009219AA /* Double+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Ext.swift"; sourceTree = "<group>"; };
 		79E7835B26E14B92009219AA /* WarningMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningMessage.swift; sourceTree = "<group>"; };
 		79E7835E26E15DE6009219AA /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
+		79E7836126E25175009219AA /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,7 +177,6 @@
 		790B37EA26691A9C0082EF50 = {
 			isa = PBXGroup;
 			children = (
-				79E080832672A19800F8C33B /* CCCWidgetExtension.entitlements */,
 				79E0807A26729BFF00F8C33B /* Shared */,
 				790B37F526691A9C0082EF50 /* 1095 iOS */,
 				79E0806D26729BF300F8C33B /* 1095 Widget */,
@@ -196,7 +197,7 @@
 		790B37F526691A9C0082EF50 /* 1095 iOS */ = {
 			isa = PBXGroup;
 			children = (
-				790B380C26691CDF0082EF50 /* Canada Citizenship Countdown.entitlements */,
+				790B380C26691CDF0082EF50 /* 1095.entitlements */,
 				79E7833D26DEAD2E009219AA /* Secrets.xcconfig */,
 				790B37F626691A9C0082EF50 /* Canada_Citizenship_CountdownApp.swift */,
 				79E7833F26DEAEFB009219AA /* APIs */,
@@ -208,6 +209,7 @@
 				790B380D26691EFA0082EF50 /* ViewModifiers */,
 				790B37FA26691A9D0082EF50 /* Assets.xcassets */,
 				790B37FF26691A9D0082EF50 /* Info.plist */,
+				79E7836126E25175009219AA /* LaunchScreen.storyboard */,
 				790B37FC26691A9D0082EF50 /* Preview Content */,
 			);
 			path = "1095 iOS";
@@ -316,6 +318,7 @@
 		79E0806D26729BF300F8C33B /* 1095 Widget */ = {
 			isa = PBXGroup;
 			children = (
+				79E080832672A19800F8C33B /* CCCWidgetExtension.entitlements */,
 				79E0806E26729BF300F8C33B /* CCCWidget.swift */,
 				79E0807026729BF400F8C33B /* Assets.xcassets */,
 				79E0807226729BF400F8C33B /* Info.plist */,
@@ -479,6 +482,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				790B37FE26691A9D0082EF50 /* Preview Assets.xcassets in Resources */,
+				79E7836226E25175009219AA /* LaunchScreen.storyboard in Resources */,
 				790B37FB26691A9D0082EF50 /* Assets.xcassets in Resources */,
 				79E7833E26DEAD2F009219AA /* Secrets.xcconfig in Resources */,
 			);
@@ -689,7 +693,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "1095 iOS/Canada Citizenship Countdown.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "1095 iOS/1095.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"1095 iOS\"";
 				DEVELOPMENT_TEAM = K59VZ37S54;
@@ -713,7 +717,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "1095 iOS/Canada Citizenship Countdown.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "1095 iOS/1095.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"1095 iOS\"";
 				DEVELOPMENT_TEAM = K59VZ37S54;
@@ -736,7 +740,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = CCCWidgetExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "1095 Widget/CCCWidgetExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = K59VZ37S54;
@@ -765,7 +769,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = CCCWidgetExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "1095 Widget/CCCWidgetExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = K59VZ37S54;
