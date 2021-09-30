@@ -2,21 +2,12 @@
   "object": {
     "pins": [
       {
-        "package": "ConfettiView",
-        "repositoryURL": "https://github.com/ziligy/ConfettiView",
-        "state": {
-          "branch": null,
-          "revision": "296020d5553799f0cdf77470138a8822d8e1e133",
-          "version": "1.1.0"
-        }
-      },
-      {
         "package": "Purchases",
         "repositoryURL": "https://github.com/RevenueCat/purchases-ios",
         "state": {
           "branch": null,
-          "revision": "05b68cb7e69e536fbbfe79c2be529a012485af96",
-          "version": "3.12.3"
+          "revision": "a35fa92a09bb34c94aa550b9d0c23a092d1b683d",
+          "version": "3.12.5"
         }
       },
       {

@@ -30,7 +30,7 @@ class SettingsViewModel: ObservableObject {
     public let bio: String = """
     Hello! 👋 I'm Roddy, the only developer behind this app.
     
-    I have decided to make this app available for free. However, if you feel like this app has helped in anyway, I would really appreciate a 'tip' from the options below. 🎁
+    I have decided to make this app available for free. However, if you feel like this app has helped in anyway, I would really appreciate a 'tip' from the options below. Doing so will unlock an exclusive widget, where you will be able to see your days remaining from your home screen! 🎁
     
     While I do enjoy it, developing apps takes up a lot of my time, and any tips received will help to motivate me to work on new features and improvements. 🛠
     

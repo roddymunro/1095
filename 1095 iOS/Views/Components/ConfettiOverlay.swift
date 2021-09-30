@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import ConfettiView
 
 /// a timed celebration
 struct ConfettiCelebrationView: View {
